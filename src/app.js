@@ -1,14 +1,6 @@
-// An array of objects containing the sentences and their respective languages
-const sentences = [
-  { text: "Annon edhellen, edro hi ammen!", language: "Elvish" },
-  { text: "Croeso i Gymru, y wlad ryfeddol hon.", language: "Welsh" },
-  { text: "Galu!", language: "Elvish" },
-  { text: "Mae hi'n bwrw glaw yn y Gogledd heddiw.", language: "Welsh" },
-  { text: "A Elbereth Gilthoniel, o menel palan-diriel...", language: "Elvish" },
-  { text: "Lleucu Llwyd oedd enw'r ferch.", language: "Welsh" },
-  { text: "Mae dafad ddu ym mydd mynydd.", language: "Welsh" },
-  { text: "Im mîl bennin blathaon.", language: "Elvish" },
-];
+
+import { sentences } from './sentences_json.js'
+console.log("Starting js file")
 
 // Keep track of the index of the current sentence being displayed
 let currentSentenceIndex = 0;
@@ -22,6 +14,7 @@ const scoreEl = document.querySelector('#score');
 
 // This function checks whether the player's answer is correct and updates the score and current sentence accordingly
 function checkAnswer(answer) {
+
   // Check if the player's answer is correct
   if (answer === sentences[currentSentenceIndex].language) {
     // If the answer is correct, increase the player's score by 1 and display a message to the player
@@ -48,3 +41,7 @@ function checkAnswer(answer) {
 }
 
 // Display the first sentence
+sentenceEl.textContent = sentences[currentSentenceIndex].text;
+
+// Make function available in the global scope
+window.checkAnswer = checkAnswer;
