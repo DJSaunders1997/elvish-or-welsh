@@ -8,6 +8,19 @@ let currentSentenceIndex = 0;
 // Keep track of the player's current score
 let score = 0;
 
+/**
+ * Shuffles an array in-place using the Fisher-Yates algorithm.
+ * @param {Array} array - The array to shuffle.
+ */
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+shuffleArray(sentences)
+
 // Select the HTML elements for displaying the current sentence and player score
 const sentenceEl = document.querySelector('#sentence');
 const switchStyleElement = document.querySelector('#switch-style'); // Add this line
