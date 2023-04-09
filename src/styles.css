@@ -45,15 +45,21 @@ p {
 }
 
 /* Sentence Display
-Style the element with the id "sentence".
-An id attribute is used to uniquely identify an element in the document.
-In this case, it's used to target the container displaying the sentences. */
+The font family gets updated to Google Fonts 'Dancing Script' if the 
+users clicks the option
+*/
 #sentence {
   font-size: 28px;
-  font-weight: bold;
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  font-family: 'inherit';
+  /* font-family: cursive; */
+  /*Change if we want to use system only fonts*/
+}
+
+#switch-style {
+  font-size: 15px;
 }
 
 /* Buttons

@@ -10,6 +10,7 @@ let score = 0;
 
 // Select the HTML elements for displaying the current sentence and player score
 const sentenceEl = document.querySelector('#sentence');
+const switchStyleElement = document.querySelector('#switch-style'); // Add this line
 const scoreEl = document.querySelector('#score');
 
 // This function checks whether the player's answer is correct and updates the score and current sentence accordingly
@@ -45,3 +46,30 @@ sentenceEl.textContent = sentences[currentSentenceIndex].text;
 
 // Make function available in the global scope
 window.checkAnswer = checkAnswer;
+
+
+var isCursive = false;
+
+/**
+ * Toggles the font style of the sentence element between cursive and block text
+ * and updates the text content of the switchStyleElement accordingly.
+ */
+function updateFontStyle() {
+  if (isCursive) {
+    sentenceEl.style.fontFamily = 'Dancing Script';
+    switchStyleElement.textContent = '(Switch to block text)';
+    isCursive = false;
+  } else {
+    sentenceEl.style.fontFamily = 'inherit';
+    switchStyleElement.textContent = '(Switch to cursive text)';
+    isCursive = true;
+  }
+}
+
+updateFontStyle()
+
+switchStyleElement.addEventListener('click', () => {
+  console.log("isCursive updated to:")
+  console.log(isCursive)
+  updateFontStyle()
+});
