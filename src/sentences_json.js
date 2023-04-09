@@ -42,6 +42,86 @@ const json_string = `
     "text": "Im mîl bennin blathaon.",
     "language": "Elvish",
     "translation": "In a land of kings, beautiful flowers."
+  },
+  {
+    "text": "I vethed, i chuiannen!",
+    "language": "Elvish",
+    "translation": "To the end, to victory!"
+  },
+  {
+    "text": "Gwnewch y pethau bychain",
+    "language": "Welsh",
+    "translation": "Do the little things"
+  },
+  {
+    "text": "Hîdh ab 'wanath!",
+    "language": "Elvish",
+    "translation": "No harm to you!"
+  },
+  {
+    "text": "Mae'r haul yn disgleirio ar y ddaear heddiw.",
+    "language": "Welsh",
+    "translation": "The sun is shining on the earth today."
+  },
+  {
+    "text": "I elenath! Mellyn!",
+    "language": "Elvish",
+    "translation": "To the elves! Friends!"
+  },
+  {
+    "text": "Dw i'n hoffi coffi poeth.",
+    "language": "Welsh",
+    "translation": "I like hot coffee."
+  },
+  {
+    "text": "A Elbereth! Gilthoniel!",
+    "language": "Elvish",
+    "translation": "Oh Elbereth! Starkindler!"
+  },
+  {
+    "text": "Mae'r afon yn llawn pysgod.",
+    "language": "Welsh",
+    "translation": "The river is full of fish."
+  },
+  {
+    "text": "Ae Adar nín, i vethed uin.",
+    "language": "Elvish",
+    "translation": "Oh our birds, to the end of the world."
+  },
+  {
+    "text": "Cymru am byth!",
+    "language": "Welsh",
+    "translation": "Wales forever!"
+  },
+  {
+    "text": "Aiya Eärendil Elenion Ancalima!",
+    "language": "Elvish",
+    "translation": "Hail Eärendil, brightest of stars!"
+  },
+  {
+    "text": "Rydyn ni'n mynd i'r parc heddiw.",
+    "language": "Welsh",
+    "translation": "We're going to the park today."
+  },
+  {
+    "text": "Sîdh-i-Daearon!",
+    "language": "Elvish",
+    "translation": "Peace on Earth!"
+  },
+  {
+    "text": "Mae'n flin gen i, dw i ddim yn siarad Cymraeg yn dda iawn.",
+    "language": "Welsh",
+    "translation": "I'm sorry, I don't speak Welsh very well."
+  },
+  {
+    "text": "A Elbereth! Gilthoniel! A! Elbereth!",
+    "language": "Elvish",
+    "translation": "Oh Elbereth! Starkindler! Oh! Elbereth!"
+  },
+  {
+    "text": "Dwi'n caru'r hen iaith Gymraeg.",
+    "language": "Welsh",
+    "translation": "I love the old Welsh language."
   }
 ]
 `
