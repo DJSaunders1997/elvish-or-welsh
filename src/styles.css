@@ -1,98 +1,103 @@
-/* 
-General Styles
-*/
+/* General Styles */
 
-/* 
-Set the font family, margin, padding, background color, and text color for the entire body of the page.
-The body element contains all the content of an HTML document.
-*/
+html {
+  height: 100%;
+  /* Added height */
+  width: 100%;
+  /* Added width */
+  overflow: hidden;
+  /* Added overflow */
+}
+
+/* Set the font family, margin, padding, background color, and text color for the entire body of the page.
+The body element contains all the content of an HTML document. */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
   color: #333;
+  height: 100%;
+  /* Added height */
+  width: 100%;
+  /* Added width */
+  overflow: hidden;
+  /* Added overflow */
+
+  /* Added Flexbox properties */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* 
-  Style the h1 (heading) elements.
-  Headings are used to create a hierarchical structure for the content.
-  The h1 element represents the highest level (most important) heading.
-  */
+
+/* Style the h1 (heading) elements.
+Headings are used to create a hierarchical structure for the content.
+The h1 element represents the highest level (most important) heading. */
 h1 {
-  font-size: 36px;
+  font-size: 48px;
+  /* Increased font size */
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
+  /* Increased margin-top */
   margin-bottom: 20px;
+  /* Increased margin-bottom */
   color: #333;
 }
 
-/* 
-  Style the p (paragraph) elements.
-  Paragraphs are used to group sentences and provide a structure for the text.
-  */
+/* Style the p (paragraph) elements.
+Paragraphs are used to group sentences and provide a structure for the text. */
 p {
-  font-size: 18px;
+  font-size: 22px;
+  /* Increased font size */
   text-align: center;
   color: #666;
+  margin-bottom: 20px;
+  /* Increased margin-bottom */
 }
 
-/* 
-  Sentence Display
-  
-  Style the element with the id "sentence".
-  An id attribute is used to uniquely identify an element in the document.
-  In this case, it's used to target the container displaying the sentences.
-  */
+/* Sentence Display
+Style the element with the id "sentence".
+An id attribute is used to uniquely identify an element in the document.
+In this case, it's used to target the container displaying the sentences. */
 #sentence {
-  font-size: 24px;
+  font-size: 28px;
+  /* Increased font size */
   font-weight: bold;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  /* Increased margin-top */
+  margin-bottom: 40px;
+  /* Increased margin-bottom */
 }
 
-/* 
-  Buttons
-  Style the button elements.
-  */
-
+/* Buttons
+Style the button elements. */
 button {
-  font-size: 18px;
-  padding: 10px 20px;
-  /* Adds 10px padding to the top and bottom, and 20px padding to the left and right */
-  margin: 10px;
-  /* Adds 10px margin around the button */
+  font-size: 22px;
+  /* Increased font size */
+  padding: 15px 30px;
+  /* Increased padding */
+  margin: 15px;
+  /* Increased margin */
   background-color: #4285f4;
-  /* Sets the background color of the button to a blue */
   color: #fff;
-  /* Sets the text color of the button to white */
   border: none;
-  /* Removes the default border of the button */
   border-radius: 5px;
-  /* Adds rounded corners to the button with a radius of 5 pixels */
   cursor: pointer;
-  /* Changes the cursor to a hand pointer when hovering over the button */
   transition: background-color 0.3s ease;
-  /* Adds a smooth transition to the background color when it changes */
 }
 
-/* 
-  Style the button elements when hovered over.
-  :hover is a CSS pseudo-class that targets an element when the user's pointer is over it.
-  */
+/* Style the button elements when hovered over.
+:hover is a CSS pseudo-class that targets an element when the user's pointer is over it. */
 button:hover {
   background-color: #3073d1;
-  /* Changes the background color of the button to a darker blue when hovered */
 }
 
-/* 
-  Style the button elements when being clicked (active state).
-  :active is a CSS pseudo-class that targets an element when it's being activated by the user.
-  */
+/* Style the button elements when being clicked (active state).
+:active is a CSS pseudo-class that targets an element when it's being activated by the user. */
 button:active {
   background-color: #2060af;
-  /* Changes the background color of the button to an even darker blue when clicked */
 }
 
 /* Style the button wrapper */
@@ -101,28 +106,29 @@ button:active {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 40px;
+  /* Increased margin-bottom */
 }
-
 
 /* Add styling for the last div (footer) */
 footer {
   width: 100%;
   padding: 20px;
+  /* Increased padding */
   background-color: #333;
   color: #fff;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
+  /* Increased font size */
   border-top: 1px solid #ccc;
+
+  /* Added to push the footer to the bottom */
+  margin-top: auto;
 }
 
 /* Style the anchor (link) elements inside the footer */
 footer a {
   color: #fff;
   text-decoration: none;
-  margin: 0 5px;
-}
-
-/* Change the color of the anchor elements when hovered over inside the footer */
-footer a:hover {
-  color: #ccc;
+  margin: 0 10px;
 }
