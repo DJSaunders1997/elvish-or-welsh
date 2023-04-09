@@ -2,11 +2,8 @@
 
 html {
   height: 100%;
-  /* Added height */
   width: 100%;
-  /* Added width */
   overflow: hidden;
-  /* Added overflow */
 }
 
 /* Set the font family, margin, padding, background color, and text color for the entire body of the page.
@@ -18,12 +15,8 @@ body {
   background-color: #f7f7f7;
   color: #333;
   height: 100%;
-  /* Added height */
   width: 100%;
-  /* Added width */
   overflow: hidden;
-  /* Added overflow */
-
   /* Added Flexbox properties */
   display: flex;
   flex-direction: column;
@@ -36,12 +29,9 @@ Headings are used to create a hierarchical structure for the content.
 The h1 element represents the highest level (most important) heading. */
 h1 {
   font-size: 48px;
-  /* Increased font size */
   text-align: center;
   margin-top: 30px;
-  /* Increased margin-top */
   margin-bottom: 20px;
-  /* Increased margin-bottom */
   color: #333;
 }
 
@@ -49,11 +39,9 @@ h1 {
 Paragraphs are used to group sentences and provide a structure for the text. */
 p {
   font-size: 22px;
-  /* Increased font size */
   text-align: center;
   color: #666;
   margin-bottom: 20px;
-  /* Increased margin-bottom */
 }
 
 /* Sentence Display
@@ -62,24 +50,18 @@ An id attribute is used to uniquely identify an element in the document.
 In this case, it's used to target the container displaying the sentences. */
 #sentence {
   font-size: 28px;
-  /* Increased font size */
   font-weight: bold;
   text-align: center;
   margin-top: 40px;
-  /* Increased margin-top */
   margin-bottom: 40px;
-  /* Increased margin-bottom */
 }
 
 /* Buttons
 Style the button elements. */
 button {
   font-size: 22px;
-  /* Increased font size */
   padding: 15px 30px;
-  /* Increased padding */
   margin: 15px;
-  /* Increased margin */
   background-color: #4285f4;
   color: #fff;
   border: none;
@@ -107,19 +89,16 @@ button:active {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 40px;
-  /* Increased margin-bottom */
 }
 
 /* Add styling for the last div (footer) */
 footer {
   width: 100%;
   padding: 20px;
-  /* Increased padding */
   background-color: #333;
   color: #fff;
   text-align: center;
   font-size: 16px;
-  /* Increased font size */
   border-top: 1px solid #ccc;
 
   /* Added to push the footer to the bottom */
