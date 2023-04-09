@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Elvish or Welsh?</title>
 
   <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
   <!-- Display the heading and introductory text for the game -->
   <h1>Elvish or Welsh?</h1>
   <p>Is this sentence Elvish or Welsh?</p>
-  
+
   <!-- Display the current sentence for the player to guess -->
   <div id="sentence"></div>
-  
-  <!-- Buttons for the player to select Elvish or Welsh -->
-  <button onclick="checkAnswer('Elvish')">Elvish</button>
-  <button onclick="checkAnswer('Welsh')">Welsh</button>
-  
+
+  <!-- Wrapper div for the buttons -->
+  <div class="button-wrapper">
+    <!-- Buttons for the player to select Elvish or Welsh -->
+    <button onclick="checkAnswer('Elvish')">Elvish</button>
+    <button onclick="checkAnswer('Welsh')">Welsh</button>
+  </div>
+
   <!-- Display the player's current score -->
   <p>Score: <span id="score">0</span></p>
 
+  <footer>
+    <hr>
+    Website by David Saunders.
+    <br>
+    <a href="https://github.com/DJSaunders1997/elvish-or-welsh">Github</a>
+    <br>
+  </footer>
+
   <!-- Load the JavaScript file -->
   <script type="module" src="app.js"></script>
-  <script type="module" src="sentences_json.js"></script> 
+  <script type="module" src="sentences_json.js"></script>
 </body>
+
 </html>
