@@ -1,0 +1,50 @@
+// An array of objects containing the sentences and their respective languages
+const sentences = [
+  { text: "Annon edhellen, edro hi ammen!", language: "Elvish" },
+  { text: "Croeso i Gymru, y wlad ryfeddol hon.", language: "Welsh" },
+  { text: "Galu!", language: "Elvish" },
+  { text: "Mae hi'n bwrw glaw yn y Gogledd heddiw.", language: "Welsh" },
+  { text: "A Elbereth Gilthoniel, o menel palan-diriel...", language: "Elvish" },
+  { text: "Lleucu Llwyd oedd enw'r ferch.", language: "Welsh" },
+  { text: "Mae dafad ddu ym mydd mynydd.", language: "Welsh" },
+  { text: "Im mîl bennin blathaon.", language: "Elvish" },
+];
+
+// Keep track of the index of the current sentence being displayed
+let currentSentenceIndex = 0;
+
+// Keep track of the player's current score
+let score = 0;
+
+// Select the HTML elements for displaying the current sentence and player score
+const sentenceEl = document.querySelector('#sentence');
+const scoreEl = document.querySelector('#score');
+
+// This function checks whether the player's answer is correct and updates the score and current sentence accordingly
+function checkAnswer(answer) {
+  // Check if the player's answer is correct
+  if (answer === sentences[currentSentenceIndex].language) {
+    // If the answer is correct, increase the player's score by 1 and display a message to the player
+    score++;
+    scoreEl.textContent = score;
+    sentenceEl.textContent = "Correct!";
+  } else {
+    // If the answer is wrong, display a message to the player
+    sentenceEl.textContent = "Wrong!";
+  }
+
+  // Move on to the next sentence
+  currentSentenceIndex++;
+
+  // If we have reached the end of the sentences, loop back to the beginning
+  if (currentSentenceIndex >= sentences.length) {
+    currentSentenceIndex = 0;
+  }
+
+  // Display the next sentence after a delay of 1 second
+  setTimeout(() => {
+    sentenceEl.textContent = sentences[currentSentenceIndex].text;
+  }, 1000);
+}
+
+// Display the first sentence
