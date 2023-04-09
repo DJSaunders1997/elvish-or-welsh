@@ -3,7 +3,7 @@
 
 This is a simple web-based game that lets players guess whether a sentence is Elvish (Sindarin) or Welsh.
 
-<img src="screenshot.jpg" height="300">
+<img src="screenshot.png" height="300">
 
 ## Background
 
