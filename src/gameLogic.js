@@ -11,7 +11,8 @@
  * @param {string} answer - The player's answer, either "Elvish" or "Welsh".
  */
 function checkAnswer(answer) {
-
+    console.log("Checking answer...")
+    
     // Check if the player's answer is correct
     if (answer === sentences[currentSentenceIndex].language) {
         // If the answer is correct, increase the player's score by 1 and display a message to the player
