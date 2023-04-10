@@ -59,9 +59,9 @@ function setupGame() {
 function setupAll() {
   console.log("Setting up JS application");
 
+  setupGame();
   setupElements();
   setupCursive();
-  setupGame();
 }
 
 setupAll();
