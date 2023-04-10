@@ -27,7 +27,11 @@ function setupElements() {
 
   // Make function available in the global scope
   // Used by the Elvish and Welsh buttons in index.html
-  window.checkAnswer = checkAnswer;
+  window.checkAnswer = (answer) => {
+    const result = checkAnswer(answer, currentSentenceIndex, score);
+    currentSentenceIndex = result.currentSentenceIndex;
+    score = result.score;
+  };
 }
 
 /**
@@ -36,13 +40,15 @@ function setupElements() {
 function setupCursive() {
   // Initialise var to keep track of cursive state 
   isCursive = false;
-  updateFontStyle();
+  updateFontStyle(isCursive, sentenceEl, switchStyleElement);
 
   switchStyleElement.addEventListener('click', () => {
     console.log("isCursive updated to:");
     console.log(isCursive);
-    updateFontStyle();
+    isCursive = !isCursive;
+    updateFontStyle(isCursive, sentenceEl, switchStyleElement);
   });
+  
 }
 
 /**

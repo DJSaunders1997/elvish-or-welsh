@@ -10,9 +10,9 @@
  * This function checks whether the player's answer is correct and updates the score and current sentence accordingly.
  * @param {string} answer - The player's answer, either "Elvish" or "Welsh".
  */
-function checkAnswer(answer) {
+function checkAnswer(answer, currentSentenceIndex, score) {
     console.log("Checking answer...")
-    
+
     // Check if the player's answer is correct
     if (answer === sentences[currentSentenceIndex].language) {
         // If the answer is correct, increase the player's score by 1 and display a message to the player
@@ -36,13 +36,15 @@ function checkAnswer(answer) {
     setTimeout(() => {
         sentenceEl.textContent = sentences[currentSentenceIndex].text;
     }, 1000);
+
+    return { currentSentenceIndex, score };
 }
 
 /**
  * Toggles the font style of the sentence element between cursive and block text
  * and updates the text content of the switchStyleElement accordingly.
  */
-function updateFontStyle() {
+function updateFontStyle(isCursive, sentenceEl, switchStyleElement) {
     if (isCursive) {
         sentenceEl.style.fontFamily = 'Dancing Script';
         switchStyleElement.textContent = '(Switch to block text)';
