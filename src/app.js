@@ -1,3 +1,10 @@
+/**
+ * app.js
+ * This file initializes the game UI, including selecting elements,
+ * updating the font style, and displaying the first sentence.
+ * It also sets up an event listener for switching font styles.
+ */
+
 
 import { sentences } from './sentences_json.js'
 console.log("Starting js file")

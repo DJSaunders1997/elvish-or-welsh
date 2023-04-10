@@ -1,5 +1,10 @@
-// Creating json as string rather than as an actual .json file 
-//  because it's next to impossible to read in a .json file in raw js. 
+/**
+ * sentences_json.js
+ * This file contains a JSON string of sentences in Elvish and Welsh,
+ * a function to shuffle an array, and an export of the shuffled sentences array.
+ * The JSON string is used instead of an actual .json file due to the difficulty
+ * in reading .json files in vanilla JavaScript.
+ */
 
 const json_string = `
 [
@@ -127,4 +132,19 @@ const json_string = `
 `
 // Creates an array of documents
 const sentences = JSON.parse(json_string);
+
+/**
+ * Shuffles an array in-place using the Fisher-Yates algorithm.
+ * @param {Array} array - The array to shuffle.
+ */
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Shuffle sentences and export shuffled array
+shuffleArray(sentences)
+
 export { sentences };
