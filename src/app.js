@@ -28,7 +28,7 @@ function setupElements() {
   // Make function available in the global scope
   // Used by the Elvish and Welsh buttons in index.html
   window.checkAnswer = (answer) => {
-    const result = checkAnswer(answer, currentSentenceIndex, score);
+    const result = checkAnswer(answer, sentences, currentSentenceIndex, score, scoreEl, sentenceEl);
     currentSentenceIndex = result.currentSentenceIndex;
     score = result.score;
   };

@@ -9,8 +9,14 @@
 /**
  * This function checks whether the player's answer is correct and updates the score and current sentence accordingly.
  * @param {string} answer - The player's answer, either "Elvish" or "Welsh".
+ * @param {Array} sentences - The array of sentences.
+ * @param {number} currentSentenceIndex - The index of the current sentence being displayed.
+ * @param {number} score - The player's current score.
+ * @param {HTMLElement} scoreEl - The DOM element for displaying the player's score.
+ * @param {HTMLElement} sentenceEl - The DOM element for displaying the current sentence.
+ * @returns {Object} An object containing the updated currentSentenceIndex and score.
  */
-function checkAnswer(answer, currentSentenceIndex, score) {
+function checkAnswer(answer, sentences, currentSentenceIndex, score, scoreEl, sentenceEl) {
     console.log("Checking answer...")
 
     // Check if the player's answer is correct
