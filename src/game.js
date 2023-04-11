@@ -27,7 +27,7 @@ export default class Game {
         this.scoreEl = scoreEl;
 
         // Update sentence element with current sentence
-        this.sentenceEl.textContent = sentenceText;
+        this.sentenceEl.textContent = this.sentences[this.currentSentenceIndex].text;
     }
     
 
