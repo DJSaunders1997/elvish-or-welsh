@@ -54,11 +54,9 @@ function updateFontStyle(isCursive, sentenceEl, switchStyleElement) {
     if (isCursive) {
         sentenceEl.style.fontFamily = 'Dancing Script';
         switchStyleElement.textContent = '(Switch to block text)';
-        isCursive = false;
     } else {
         sentenceEl.style.fontFamily = 'inherit';
         switchStyleElement.textContent = '(Switch to cursive text)';
-        isCursive = true;
     }
 }
 
