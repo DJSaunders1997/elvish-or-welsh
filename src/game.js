@@ -1,5 +1,12 @@
 /**
  * Game class that combines both game logic and UI updates.
+ * 
+ * TODOs:
+ * - split check answer into a purely game function, and ui function
+ * - create method to update ui element
+ * - create sentences as its own class, so we can do stuff like 
+ *      sentences.nextSentence and not have to keep track of state ourself
+ * - FUTURE: Add correct / incorrect display to seperate box
  */
 export default class Game {
 
@@ -18,8 +25,7 @@ export default class Game {
     
         this.sentenceEl = sentenceEl;
         this.scoreEl = scoreEl;
-    
-        let sentenceText = this.sentences[this.currentSentenceIndex].text;
+
         // Update sentence element with current sentence
         this.sentenceEl.textContent = sentenceText;
     }
