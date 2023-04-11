@@ -23,6 +23,14 @@ Meaning that Elvish and Welsh can look quite similar, especially to those unfami
 - CSS
 - JavaScript
 - ChatGPT 👀️
+- Google Analytics (tracks only page views and no user info)
+
+## Files
+- index.html: the HTML file for the game website.
+- style.css: the CSS file for styling the game website.
+- app.js: main file initializing the game and setting up the required elements, event listeners, and game state.
+- gameLogic.js: core game logic file, which includes functions for checking answers, updating the font style, and other game-related functionalities.
+- sentences_json.js: contains the sentences data in JSON format, which is parsed and shuffled before being exported. This file also contains a function to shuffle the sentences array.
 
 ## Contributions
 
