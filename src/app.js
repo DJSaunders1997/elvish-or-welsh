@@ -6,55 +6,32 @@
  */
 
 import { sentences } from './sentences_json.js';
-import { checkAnswer} from './gameLogic.js';
 import Cursive from './cursive.js';
-
-// Define global variables
-let sentenceEl, switchStyleElement, scoreEl; // HTML elements.
-
-let currentSentenceIndex, score; // Game variables.
+import Game from './game.js';
 
 /**
  * Sets up the HTML elements for displaying the current sentence and player score.
  */
 function setupElements() {
-  sentenceEl = document.querySelector('#sentence');
-  switchStyleElement = document.querySelector('#switch-style');
-  scoreEl = document.querySelector('#score');
-
-  // Update sentence element with current sentence
-  sentenceEl.textContent = sentences[currentSentenceIndex].text;
-
-  // Make function available in the global scope
-  // Used by the Elvish and Welsh buttons in index.html
-  window.checkAnswer = (answer) => {
-    const result = checkAnswer(answer, sentences, currentSentenceIndex, score, scoreEl, sentenceEl);
-    currentSentenceIndex = result.currentSentenceIndex;
-    score = result.score;
-  };
+  let sentenceEl = document.querySelector('#sentence');
+  let switchStyleElement = document.querySelector('#switch-style');
+  let scoreEl = document.querySelector('#score');
 
   // Return the elements needed for switching to cursive functionality
-  return {sentenceEl, switchStyleElement }
-}
-
-/**
- * Sets up the initial state of the game.
- */
-function setupGame() {
-  currentSentenceIndex = 0; // Keep track of the index of the current sentence being displayed
-  score = 0; // Keep track of the player's current score
+  return [sentenceEl, switchStyleElement, scoreEl]
 }
 
 /**
  * Calls all setup functions to initialize the game.
  */
-function setupAll() {
-  console.log("Setting up JS application");
 
-  setupGame();
-  ({sentenceEl, switchStyleElement} = setupElements());
-  
-  cursive = new Cursive(sentenceEl, switchStyleElement)
-}
+console.log("Setting up JS application");
 
-setupAll();
+let [sentenceEl, switchStyleElement, scoreEl] = setupElements();
+
+let cursive = new Cursive(sentenceEl, switchStyleElement);
+let game = new Game(sentences, scoreEl, sentenceEl);
+
+// Make function available in the global scope
+// Used by the Elvish and Welsh buttons in index.html
+window.checkAnswer = (answer) => game.checkAnswer(answer);
