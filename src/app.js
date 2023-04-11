@@ -13,21 +13,21 @@ import Game from './game.js';
  * Sets up the HTML elements for displaying the current sentence and player score.
  */
 function setupElements() {
-  let sentenceEl = document.querySelector('#sentence');
-  let switchStyleElement = document.querySelector('#switch-style');
-  let scoreEl = document.querySelector('#score');
+  const sentenceEl = document.querySelector('#sentence');
+  const switchStyleElement = document.querySelector('#switch-style');
+  const scoreEl = document.querySelector('#score');
 
   // Return the elements needed for switching to cursive functionality
-  return [sentenceEl, switchStyleElement, scoreEl]
+  return { sentenceEl, switchStyleElement, scoreEl };
 }
 
 /**
- * Calls all setup functions to initialize the game.
+ * Call all setup functions to initialize the game.
  */
 
 console.log("Setting up JS application");
 
-let [sentenceEl, switchStyleElement, scoreEl] = setupElements();
+const { sentenceEl, switchStyleElement, scoreEl } = setupElements();
 
 let cursive = new Cursive(sentenceEl, switchStyleElement);
 let game = new Game(sentences, scoreEl, sentenceEl);
