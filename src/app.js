@@ -6,11 +6,11 @@
  */
 
 import { sentences } from './sentences_json.js';
-import { checkAnswer, updateFontStyle } from './gameLogic.js';
+import { checkAnswer} from './gameLogic.js';
+import Cursive from './cursive.js';
 
 // Define global variables
 let sentenceEl, switchStyleElement, scoreEl; // HTML elements.
-let isCursive; // Cursive state.
 
 let currentSentenceIndex, score; // Game variables.
 
@@ -32,23 +32,9 @@ function setupElements() {
     currentSentenceIndex = result.currentSentenceIndex;
     score = result.score;
   };
-}
 
-/**
- * Initialises the cursive state and sets up an event listener for switching font styles.
- */
-function setupCursive() {
-  // Initialise var to keep track of cursive state 
-  isCursive = false;
-  updateFontStyle(isCursive, sentenceEl, switchStyleElement);
-
-  switchStyleElement.addEventListener('click', () => {
-    console.log("isCursive updated to:");
-    console.log(isCursive);
-    isCursive = !isCursive;
-    updateFontStyle(isCursive, sentenceEl, switchStyleElement);
-  });
-  
+  // Return the elements needed for switching to cursive functionality
+  return {sentenceEl, switchStyleElement }
 }
 
 /**
@@ -66,8 +52,9 @@ function setupAll() {
   console.log("Setting up JS application");
 
   setupGame();
-  setupElements();
-  setupCursive();
+  ({sentenceEl, switchStyleElement} = setupElements());
+  
+  cursive = new Cursive(sentenceEl, switchStyleElement)
 }
 
 setupAll();

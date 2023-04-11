@@ -46,18 +46,4 @@ function checkAnswer(answer, sentences, currentSentenceIndex, score, scoreEl, se
     return { currentSentenceIndex, score };
 }
 
-/**
- * Toggles the font style of the sentence element between cursive and block text
- * and updates the text content of the switchStyleElement accordingly.
- */
-function updateFontStyle(isCursive, sentenceEl, switchStyleElement) {
-    if (isCursive) {
-        sentenceEl.style.fontFamily = 'Dancing Script';
-        switchStyleElement.textContent = '(Switch to block text)';
-    } else {
-        sentenceEl.style.fontFamily = 'inherit';
-        switchStyleElement.textContent = '(Switch to cursive text)';
-    }
-}
-
-export { checkAnswer, updateFontStyle };
+export { checkAnswer };
