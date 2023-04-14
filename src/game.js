@@ -7,7 +7,9 @@
  * - FUTURE: Add correct / incorrect display to separate box
  */
 
+// Imports used for JSDocs
 import { SentenceManager } from './sentences.js';
+import UI from './ui.js';
 
 export default class Game {
 
@@ -15,19 +17,15 @@ export default class Game {
      * Sets up the initial state of the game.
      * Initilises initial score and sentence index, and stores reference to DOM elements.
      * @param {SentenceManager} sentenceManager - An instance of the sentenceManager class.
-     * @param {HTMLElement} scoreEl - The DOM element for displaying the player's score.
-     * @param {HTMLElement} sentenceEl - The DOM element for displaying the current sentence.
+     * @param {UI} ui - Object to manage and update UI.
      */
-    constructor(sentenceManager, scoreEl, sentenceEl) {
+    constructor(sentenceManager, ui) {
         this.score = 0; // Keep track of the player's current score
-    
-        this.sentenceManager = sentenceManager;
-    
-        this.sentenceEl = sentenceEl;
-        this.scoreEl = scoreEl;
+        this.sentenceManager = sentenceManager
 
+        this.ui = ui;
         // Update sentence element with current sentence
-        this.sentenceEl.textContent = sentenceManager.getSentence().text;
+        this.ui.updateSentence( sentenceManager.getSentence().text );
     }
     
 
@@ -37,24 +35,24 @@ export default class Game {
      */
     checkAnswer(answer) {
         console.log("Checking answer...");
+        console.log("Current sentence:" + this.sentenceManager.getSentence())
 
         // Check if the player's answer is correct
         if (answer === this.sentenceManager.getSentence().language) {
             // If the answer is correct, increase the player's score by 1 and display a message to the player
             this.score++;
-            this.scoreEl.textContent = this.score;
-            this.sentenceEl.textContent = "Correct!";
+            this.ui.updateScore( this.score );
+            var result = "Correct!"
         } else {
             // If the answer is wrong, display a message to the player
-            this.sentenceEl.textContent = "Wrong!";
+            var result = "Wrong!"
         }
+
+        this.ui.updateSentence(result)
 
         // Move on to the next sentence
         this.sentenceManager.nextSentence();
 
-        // Display the next sentence after a delay of 1 second
-        setTimeout(() => {
-            this.sentenceEl.textContent = this.sentenceManager.getSentence().text;
-        }, 1000);
+        this.ui.flashResult(result, this.sentenceManager.getSentence().text)
     }
 }

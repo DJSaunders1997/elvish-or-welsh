@@ -6,35 +6,17 @@
  */
 
 import { SentenceManager ,json_string } from './sentences.js';
-import Cursive from './cursive.js';
 import Game from './game.js';
-
-/**
- * Sets up the HTML elements for displaying the current sentence and player score.
- */
-function setupElements() {
-  const sentenceEl = document.querySelector('#sentence');
-  const switchStyleElement = document.querySelector('#switch-style');
-  const scoreEl = document.querySelector('#score');
-
-  // Return the elements needed for switching to cursive functionality
-  return { sentenceEl, switchStyleElement, scoreEl };
-}
-
-/**
- * Call all setup functions to initialize the game.
- */
+import UI from './ui.js';
 
 console.log("Setting up JS application");
 
-const { sentenceEl, switchStyleElement, scoreEl } = setupElements();
-
-let cursive = new Cursive(sentenceEl, switchStyleElement);
+let ui = new UI();
 
 let sentenceManager = new SentenceManager(json_string);
-
-let game = new Game(sentenceManager, scoreEl, sentenceEl);
+let game = new Game(sentenceManager, ui);
 
 // Make function available in the global scope
 // Used by the Elvish and Welsh buttons in index.html
+// Should this go into ui or game class?
 window.checkAnswer = (answer) => game.checkAnswer(answer);
