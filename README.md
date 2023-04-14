@@ -26,11 +26,12 @@ Meaning that Elvish and Welsh can look quite similar, especially to those unfami
 - Google Analytics (tracks only page views and no user info)
 
 ## Files
-- index.html: the HTML file for the game website.
-- style.css: the CSS file for styling the game website.
-- app.js: main file initializing the game and setting up the required elements, event listeners, and game state.
-- gameLogic.js: core game logic file, which includes functions for checking answers, updating the font style, and other game-related functionalities.
-- sentences_json.js: contains the sentences data in JSON format, which is parsed and shuffled before being exported. This file also contains a function to shuffle the sentences array.
+- index.html: The HTML file that defines the structure of the game website, including the game container, buttons, and text elements.
+- style.css:  The CSS file responsible for styling the game website, including the layout, colors, and fonts used in the game interface.
+- app.js: The main JavaScript file that initializes the game, and ui objects.
+- game.js: Defines class that handles core game functionality. 
+- ui.js: Class that handles UI updates.
+- sentences.js: Contains the sentences data in JSON format, which is read and served to the game through the SentenceManger class.
 
 ## Contributions
 
