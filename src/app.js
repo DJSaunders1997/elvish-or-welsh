@@ -5,7 +5,7 @@
  * It also sets up an event listener for switching font styles.
  */
 
-import { sentences } from './sentences_json.js';
+import { SentenceManager ,json_string } from './sentences.js';
 import Cursive from './cursive.js';
 import Game from './game.js';
 
@@ -30,7 +30,10 @@ console.log("Setting up JS application");
 const { sentenceEl, switchStyleElement, scoreEl } = setupElements();
 
 let cursive = new Cursive(sentenceEl, switchStyleElement);
-let game = new Game(sentences, scoreEl, sentenceEl);
+
+let sentenceManager = new SentenceManager(json_string);
+
+let game = new Game(sentenceManager, scoreEl, sentenceEl);
 
 // Make function available in the global scope
 // Used by the Elvish and Welsh buttons in index.html
