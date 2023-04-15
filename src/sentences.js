@@ -1,5 +1,5 @@
 /**
- * sentences_json.js
+ * sentences.js
  * This file contains a JSON string of sentences in Elvish and Welsh,
  * a function to shuffle an array, and an export of the shuffled sentences array.
  * The JSON string is used instead of an actual .json file due to the difficulty
@@ -130,21 +130,58 @@ const json_string = `
   }
 ]
 `
-// Creates an array of documents
-const sentences = JSON.parse(json_string);
 
 /**
- * Shuffles an array in-place using the Fisher-Yates algorithm.
- * @param {Array} array - The array to shuffle.
+ * sentenceManager class that handles sentence management.
  */
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+class SentenceManager {
+  /**
+   * Sets up the initial state of the Sentences class.
+   * @param {string} json_string - The JSON string containing the sentences.
+   */
+  constructor(json_string) {
+    this.sentences = JSON.parse(json_string); // Creates an array of documents from json_string
+    this.currentSentenceIndex = 0;
+    this.shuffleArray();
+    this.currentSentence = this.sentences[this.currentSentenceIndex];
+  }
+
+  /**
+   * Shuffles an array in-place using the Fisher-Yates algorithm.
+   * @private
+   */
+  shuffleArray() {
+    for (let i = this.sentences.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.sentences[i], this.sentences[j]] = [this.sentences[j], this.sentences[i]];
+    }
+  }
+
+  /**
+ * Returns the current sentence.
+ * @returns {Object} The current sentence object.
+ */
+  getSentence() {
+    return this.currentSentence
+  }
+
+  /**
+   * Updates the current sentence and index.
+   */
+  nextSentence() {
+
+    this.currentSentenceIndex++;
+    this.currentSentence = this.sentences[this.currentSentenceIndex];
+
+    // If we've been through all sentences, then reset index and reshuffle
+    if (this.currentSentenceIndex >= this.sentences.length) {
+      this.currentSentenceIndex = 0;
+      this.shuffleArray();
+    }
   }
 }
 
-// Shuffle sentences and export shuffled array
-shuffleArray(sentences)
+// const sentences = new sentenceManager(json_string);
 
-export { sentences };
+// Export Class and string here so it can be instantiates in app.js for visibility
+export { SentenceManager, json_string };

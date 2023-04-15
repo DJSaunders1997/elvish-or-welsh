@@ -5,69 +5,18 @@
  * It also sets up an event listener for switching font styles.
  */
 
-import { sentences } from './sentences_json.js';
-import { checkAnswer, updateFontStyle } from './gameLogic.js';
+import { SentenceManager ,json_string } from './sentences.js';
+import Game from './game.js';
+import UI from './ui.js';
 
-// Define global variables
-let sentenceEl, switchStyleElement, scoreEl; // HTML elements.
-let isCursive; // Cursive state.
+console.log("Setting up JS application");
 
-let currentSentenceIndex, score; // Game variables.
+let ui = new UI();
 
-/**
- * Sets up the HTML elements for displaying the current sentence and player score.
- */
-function setupElements() {
-  sentenceEl = document.querySelector('#sentence');
-  switchStyleElement = document.querySelector('#switch-style');
-  scoreEl = document.querySelector('#score');
+let sentenceManager = new SentenceManager(json_string);
+let game = new Game(sentenceManager, ui);
 
-  // Update sentence element with current sentence
-  sentenceEl.textContent = sentences[currentSentenceIndex].text;
-
-  // Make function available in the global scope
-  // Used by the Elvish and Welsh buttons in index.html
-  window.checkAnswer = (answer) => {
-    const result = checkAnswer(answer, sentences, currentSentenceIndex, score, scoreEl, sentenceEl);
-    currentSentenceIndex = result.currentSentenceIndex;
-    score = result.score;
-  };
-}
-
-/**
- * Initialises the cursive state and sets up an event listener for switching font styles.
- */
-function setupCursive() {
-  // Initialise var to keep track of cursive state 
-  isCursive = false;
-  updateFontStyle(isCursive, sentenceEl, switchStyleElement);
-
-  switchStyleElement.addEventListener('click', () => {
-    console.log("isCursive updated to:");
-    console.log(isCursive);
-    isCursive = !isCursive;
-    updateFontStyle(isCursive, sentenceEl, switchStyleElement);
-  });
-  
-}
-
-/**
- * Sets up the initial state of the game.
- */
-function setupGame() {
-  currentSentenceIndex = 0; // Keep track of the index of the current sentence being displayed
-  score = 0; // Keep track of the player's current score
-}
-
-/**
- * Calls all setup functions to initialize the game.
- */
-function setupAll() {
-  console.log("Setting up JS application");
-
-  setupGame();
-  setupElements();
-  setupCursive();
-}
-
-setupAll();
+// Make function available in the global scope
+// Used by the Elvish and Welsh buttons in index.html
+// Should this go into ui or game class?
+window.checkAnswer = (answer) => game.checkAnswer(answer);
