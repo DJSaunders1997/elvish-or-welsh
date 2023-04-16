@@ -1,10 +1,6 @@
 /**
- * Game class that combines both game logic and UI updates.
+ * Game class that handles game logic.
  *
- * TODOs:
- * - split check answer into a purely game function, and ui function
- * - create method to update ui element
- * - FUTURE: Add correct / incorrect display to separate box
  */
 
 // Imports used for JSDocs
@@ -30,6 +26,9 @@ export default class Game {
   /**
    * This method checks whether the player's answer is correct and updates the score and current sentence accordingly.
    * @param {string} answer - The player's answer, either "Elvish" or "Welsh".
+   * 
+   * TODO: Split the checkAnswer method into a purely game function and UI function, 
+   * to maintain a clear separation of concerns and improve code maintainability.
    */
   checkAnswer(answer) {
     console.log("Checking answer...");

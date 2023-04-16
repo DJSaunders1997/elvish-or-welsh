@@ -12,7 +12,6 @@ import UI from './ui.js';
 console.log("Setting up JS application");
 
 let ui = new UI();
-
 let sentenceManager = new SentenceManager(json_string);
 let game = new Game(sentenceManager, ui);
 
