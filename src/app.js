@@ -12,11 +12,10 @@ import UI from './ui.js';
 console.log("Setting up JS application");
 
 let ui = new UI();
-
 let sentenceManager = new SentenceManager(json_string);
 let game = new Game(sentenceManager, ui);
 
 // Make function available in the global scope
-// Used by the Elvish and Welsh buttons in index.html
-// Should this go into ui or game class?
+// Used by the Elvish, Welsh and Next Question buttons in index.html
 window.checkAnswer = (answer) => game.checkAnswer(answer);
+window.showNextQuestion = () => game.showNextQuestion();

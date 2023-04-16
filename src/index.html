@@ -25,11 +25,12 @@
   <h1>Elvish or Welsh?</h1>
   <p>Is this sentence Elvish or Welsh?</p>
 
-  <!-- Display the current sentence for the player to guess -->
-  <div id="sentence">Sentence</div>
+  <div id="questionDiv">
+    <!-- Display the current sentence for the player to guess -->
+    <div id="sentence"></div>
 
-    <!-- Give users ability to change between cursive and block -->
-  <p id="switch-style" style="cursor: pointer;">Switch to cursive/block text)</p>
+  <!-- Give users ability to change between cursive and block -->
+  <p id="switch-style" style="cursor: pointer;">(Switch to cursive/block text)</p>
 
   <!-- Wrapper div for the buttons -->
   <div class="button-wrapper">
@@ -37,7 +38,17 @@
     <button onclick="checkAnswer('Elvish')">Elvish</button>
     <button onclick="checkAnswer('Welsh')">Welsh</button>
   </div>
+  </div>
 
+  <div id="answerDiv">
+    <p id="result"></p>
+    <p id="translation"></p>
+    <!-- Wrapper div for the buttons -->
+    <div class="button-wrapper">
+      <button onclick="showNextQuestion()">Next Question</button>
+
+    </div>
+  </div>
   <!-- Display the player's current score -->
   <p>Score: <span id="score">0</span></p>
 
