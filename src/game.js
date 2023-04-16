@@ -40,25 +40,20 @@ export default class Game {
       // If the answer is correct, increase the player's score by 1 and display a message to the player
       this.score++;
       this.ui.updateScore(this.score);
-      var result = "Correct!";
+      var correct = true;
     } else {
       // If the answer is wrong, display a message to the player
-      var result = "Wrong!";
+      var correct = false;
     }
 
-    this.ui.updateSentence(
-      result + "\nTranslation: " + this.sentenceManager.getSentence().translation
-    );
+    this.ui.showAnswer(correct, this.sentenceManager.getSentence().translation);
 
-    // Move on to the next sentence
-    this.sentenceManager.nextSentence();
-
-    // this.ui.flashResult(result, this.sentenceManager.getSentence().text);
   }
 
   showNextQuestion() {
     // Move on to the next sentence
     this.sentenceManager.nextSentence();
-    this.ui.updateSentence(this.sentenceManager.getSentence().text);
+
+    this.ui.showQuestion(this.sentenceManager.getSentence().text)
   }
 }

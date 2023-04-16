@@ -9,6 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
+  <style>
+    .correct {
+      background-color: green;
+    }
+
+    .wrong {
+      background-color: red;
+    }
+  </style>
+
   <!-- For Google Analytics view tracking-->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1GKEBSDFL"></script>
@@ -25,17 +35,24 @@
   <h1>Elvish or Welsh?</h1>
   <p>Is this sentence Elvish or Welsh?</p>
 
-  <!-- Display the current sentence for the player to guess -->
-  <div id="sentence">Sentence</div>
+  <div id="questionDiv" style="display: block;"">
+    <!-- Display the current sentence for the player to guess -->
+    <div id="sentence">Sentence</div>
 
     <!-- Give users ability to change between cursive and block -->
-  <p id="switch-style" style="cursor: pointer;">Switch to cursive/block text)</p>
+    <p id="switch-style" style="cursor: pointer;">(Switch to cursive/block text)</p>
 
-  <!-- Wrapper div for the buttons -->
-  <div class="button-wrapper">
-    <!-- Buttons for the player to select Elvish or Welsh -->
-    <button onclick="checkAnswer('Elvish')">Elvish</button>
-    <button onclick="checkAnswer('Welsh')">Welsh</button>
+    <!-- Wrapper div for the buttons -->
+    <div class="button-wrapper">
+      <!-- Buttons for the player to select Elvish or Welsh -->
+      <button onclick="checkAnswer('Elvish')">Elvish</button>
+      <button onclick="checkAnswer('Welsh')">Welsh</button>
+    </div>
+  </div>
+
+  <div id="answerDiv" style="display: none;">
+    <p id="result"></p>
+    <p id="translation"></p>
     <button onclick="showNextQuestion()">Next Question</button>
   </div>
 
