@@ -11,7 +11,7 @@ export default class UI {
     this.scoreEl = document.querySelector("#score"); //DOM element for displaying the player's score.
 
     // Initialize the Cursive variable
-    this.isCursive = false;
+    this.isCursive = true;
     this.setupCursiveEventListeners();
     this.updateFontStyle(); // Update the font style initially
   }
@@ -67,10 +67,10 @@ export default class UI {
   updateFontStyle() {
     if (this.isCursive) {
       this.sentenceEl.style.fontFamily = "Dancing Script";
-      this.switchStyleEl.textContent = "(Switch to block text)";
+      this.switchStyleEl.textContent = "(Switch to block text - easy)";
     } else {
       this.sentenceEl.style.fontFamily = "inherit";
-      this.switchStyleEl.textContent = "(Switch to cursive text)";
+      this.switchStyleEl.textContent = "(Switch to cursive text - hard)";
     }
   }
 } 
