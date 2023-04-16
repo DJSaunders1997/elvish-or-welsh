@@ -86,7 +86,7 @@ export default class UI {
       this.resultEl.textContent = "Wrong!";
     }
 
-    this.translationEl.textContent = translation;
+    this.translationEl.textContent = "Translation: " + translation;
 
     // TODO: manage any other functionality
   }
