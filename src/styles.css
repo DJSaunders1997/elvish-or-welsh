@@ -1,13 +1,13 @@
 /* General Styles */
 
+/* Root element */
 html {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-/* Set the font family, margin, padding, background color, and text color for the entire body of the page.
-The body element contains all the content of an HTML document. */
+/* Body styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,16 +17,12 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  /* Added Flexbox properties */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-
-/* Style the h1 (heading) elements.
-Headings are used to create a hierarchical structure for the content.
-The h1 element represents the highest level (most important) heading. */
+/* Headings */
 h1 {
   font-size: 48px;
   text-align: center;
@@ -35,8 +31,7 @@ h1 {
   color: #333;
 }
 
-/* Style the p (paragraph) elements.
-Paragraphs are used to group sentences and provide a structure for the text. */
+/* Paragraphs */
 p {
   font-size: 22px;
   text-align: center;
@@ -44,43 +39,38 @@ p {
   margin-bottom: 20px;
 }
 
-/* Sentence Display
-The font family gets updated to Google Fonts 'Dancing Script' if the 
-users clicks the option
-*/
+/* Sentence Display */
 #sentence {
   font-size: 28px;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
   font-family: 'inherit';
-  /* font-family: cursive; */
-  /*Change if we want to use system only fonts*/
 }
 
-/* question and answer divs are updated to be visible or not*/
+/* Visibility settings for question and answer divs */
 #questionDiv {
   display: block;
 }
-
 #answerDiv {
   display: none;
 }
 
-/* Colour div based on answer*/
+/* Background colors based on answer correctness */
 .correct {
   background-color: rgba(0, 128, 0, 0.25);
 }
-
 .wrong {
   background-color: rgba(255, 0, 0, 0.25);
 }
 
+/* Switch style settings */
 #switch-style {
   font-size: 15px;
   cursor: pointer;
 }
 
+/* Result display settings */
 #result {
   font-size: 28px;
   text-align: center;
@@ -88,8 +78,7 @@ users clicks the option
   margin-bottom: 20px;
 }
 
-/* Buttons
-Style the button elements. */
+/* Button styles */
 button {
   font-size: 22px;
   padding: 15px 30px;
@@ -101,20 +90,14 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-/* Style the button elements when hovered over.
-:hover is a CSS pseudo-class that targets an element when the user's pointer is over it. */
 button:hover {
   background-color: #3073d1;
 }
-
-/* Style the button elements when being clicked (active state).
-:active is a CSS pseudo-class that targets an element when it's being activated by the user. */
 button:active {
   background-color: #2060af;
 }
 
-/* Style the button wrapper */
+/* Button wrapper styles */
 .button-wrapper {
   display: flex;
   justify-content: center;
@@ -123,7 +106,7 @@ button:active {
   margin-bottom: 40px;
 }
 
-/* Add styling for the last div (footer) */
+/* Footer styles */
 footer {
   width: 100%;
   padding: 20px;
@@ -132,12 +115,10 @@ footer {
   text-align: center;
   font-size: 16px;
   border-top: 1px solid #ccc;
-
-  /* Added to push the footer to the bottom */
   margin-top: auto;
 }
 
-/* Style the anchor (link) elements inside the footer */
+/* Footer link styles */
 footer a {
   color: #4285f4;
   text-decoration: none;
