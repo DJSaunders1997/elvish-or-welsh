@@ -58,8 +58,25 @@ users clicks the option
   /*Change if we want to use system only fonts*/
 }
 
+/* question and answer divs are updated to be visible or not*/
+#questionDiv {
+  display: block;
+}
+#answerDiv {
+  display: none;
+}
+
+/* Colour div based on answer*/
+.correct {
+  background-color: rgba(0, 128, 0, 0.25);
+}
+.wrong {
+  background-color: rgba(255, 0, 0, 0.25);
+}
+
 #switch-style {
   font-size: 15px;
+  cursor: pointer;
 }
 
 #result {

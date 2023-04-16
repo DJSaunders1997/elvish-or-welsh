@@ -9,16 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
-  <style>
-    .correct {
-      background-color: rgba(0, 128, 0, 0.25);
-    }
-
-    .wrong {
-      background-color: rgba(255, 0, 0, 0.25);
-    }
-  </style>
-
   <!-- For Google Analytics view tracking-->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1GKEBSDFL"></script>
@@ -35,7 +25,7 @@
   <h1>Elvish or Welsh?</h1>
   <p>Is this sentence Elvish or Welsh?</p>
 
-  <div id="questionDiv" style="display: block;"">
+  <div id="questionDiv">
     <!-- Display the current sentence for the player to guess -->
     <div id="sentence"></div>
 
@@ -50,7 +40,7 @@
   </div>
   </div>
 
-  <div id="answerDiv" style="display: none;">
+  <div id="answerDiv">
     <p id="result"></p>
     <p id="translation"></p>
     <!-- Wrapper div for the buttons -->
