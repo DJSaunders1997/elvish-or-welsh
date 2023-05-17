@@ -127,6 +127,107 @@ const json_string = `
     "text": "Dwi'n caru'r hen iaith Gymraeg.",
     "language": "Welsh",
     "translation": "I love the old Welsh language."
+  },
+  
+  {
+    "text": "Mae'r dail yn disgyn o'r coed.",
+    "language": "Welsh",
+    "translation": "The leaves are falling from the trees."
+  },
+  {
+    "text": "Mae'r seren wedi codi.",
+    "language": "Welsh",
+    "translation": "The star has risen."
+  },
+  {
+    "text": "Nin o Chithaeglir lasto beth daer: Rimmo nin Bruinen dan in Ulaer!",
+    "language": "Elvish",
+    "translation": "From the Great River to the last shore: in Bruinen let the Ringwraiths drown!"
+  },
+  {
+    "text": "Rhyfelwyr mewn gwisg aur a gwyn.",
+    "language": "Welsh",
+    "translation": "Warriors in gold and white attire."
+  },
+  {
+    "text": "Noro lim, noro lim, Asfaloth!",
+    "language": "Elvish",
+    "translation": "Ride swift, ride swift, Asfaloth!"
+  },
+  {
+    "text": "Llwybrau wedi'u gorchuddio â dail.",
+    "language": "Welsh",
+    "translation": "Paths covered with leaves."
+  },
+  {
+    "text": "Pedo mellon a minno.",
+    "language": "Elvish",
+    "translation": "Speak, friend, and enter."
+  },
+  {
+    "text": "Clywch y geiriau o'r coedwig tywyll.",
+    "language": "Welsh",
+    "translation": "Hear the words from the dark forest."
+  },
+  {
+    "text": "Auta i lómë! Aurë entuluva!",
+    "language": "Elvish",
+    "translation": "The night is passing! Day shall come again!"
+  },
+  {
+    "text": "Yma yw'r cysgodion yn cwympo.",
+    "language": "Welsh",
+    "translation": "Here the shadows are falling."
+  },
+  {
+    "text": "Le melon",
+    "language": "Elvish",
+    "translation": "I love you"
+  },
+  {
+    "text": "Dw i'n hoffi teithio.",
+    "language": "Welsh",
+    "translation": "I like to travel."
+  },
+  {
+    "text": "Namarie!",
+    "language": "Elvish",
+    "translation": "Farewell!"
+  },
+  {
+    "text": "Fy hoff lyfr yw Harry Potter.",
+    "language": "Welsh",
+    "translation": "My favorite book is Harry Potter."
+  },
+  {
+    "text": "Galad, i mae adar.",
+    "language": "Elvish",
+    "translation": "Light, the birds are singing."
+  },
+  {
+    "text": "Dw i'n byw yng Nghaerdydd.",
+    "language": "Welsh",
+    "translation": "I live in Cardiff."
+  },
+  {
+    "text": "Yána yulma, úpoles rato.",
+    "language": "Elvish",
+    "translation": "Long journey, the wheel does not roll."
+  },
+  {
+    "text": "Dw i'n dysgu Cymraeg.",
+    "language": "Welsh",
+    "translation": "I'm learning Welsh."
+  },
+  {
+    "text": "Nienna, anannalye.",
+    "language": "Elvish",
+    "translation": "Nienna, I understand."
+  },
+  {
+    "text": "Mae'r tywydd yn oer heddiw.",
+    "language": "Welsh",
+    "translation": "The weather is cold today."
   }
 ]
 `
