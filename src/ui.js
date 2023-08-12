@@ -1,23 +1,25 @@
 // ui.js
+
+/**
+ * UI class for handling user interface interactions.
+ */
 export default class UI {
   /**
    * Initializes the UI class.
    * Sets up the HTML elements for displaying the current sentence and player score.
-   * Contains Cursive functionality for toggling between cursive and block text font styles.
+   * Contains functionality for toggling between cursive and block text font styles.
    */
   constructor() {
-    this.scoreEl = document.querySelector("#score"); //DOM element for displaying the player's score.
-
-    // Question Div contains sentence, switch style, and button elvish/welsh elements
+    this.scoreElement = document.querySelector("#score");
     this.questionDiv = document.getElementById("questionDiv");
-    this.sentenceEl = document.querySelector("#sentence");
-    this.switchStyleEl = document.querySelector("#switch-style");
-
+    this.sentenceElement = document.querySelector("#sentence");
+    this.switchStyleElement = document.querySelector("#switch-style");
+    
     // Answer Div contains result, translation, and next question button
     this.answerDiv = document.getElementById("answerDiv");
-    this.resultEl = document.getElementById("result");
-    this.translationEl = document.getElementById("translation");
-
+    this.resultElement = document.getElementById("result");
+    this.translationElement = document.getElementById("translation");
+    
     // Initialize the Cursive variable
     this.isCursive = true;
     this.setupCursiveEventListeners();
@@ -25,15 +27,12 @@ export default class UI {
   }
 
   /**
-   * Set up the event listeners for switching to cursive.
-   * * @private
+   * Sets up the event listeners for switching to cursive.
+   * @private
    */
   setupCursiveEventListeners() {
-    this.switchStyleEl.addEventListener("click", () => {
-      // Toggle the isCursive state
+    this.switchStyleElement.addEventListener("click", () => {
       this.isCursive = !this.isCursive;
-
-      // Update the font style
       this.updateFontStyle();
     });
   }
@@ -43,7 +42,7 @@ export default class UI {
    * @param {string} text - The text to be displayed.
    */
   updateSentence(text) {
-    this.sentenceEl.textContent = text;
+    this.sentenceElement.textContent = text;
   }
 
   /**
@@ -51,19 +50,19 @@ export default class UI {
    * @param {string} text - The text to be displayed.
    */
   updateScore(text) {
-    this.scoreEl.textContent = text;
+    this.scoreElement.textContent = text;
   }
 
   /**
-   * Update the font style based on the isCursive state.
+   * Updates the font style based on the isCursive state.
    */
   updateFontStyle() {
     if (this.isCursive) {
-      this.sentenceEl.style.fontFamily = "Dancing Script";
-      this.switchStyleEl.textContent = "(Switch to block text - easy)";
+      this.sentenceElement.style.fontFamily = "Dancing Script";
+      this.switchStyleElement.textContent = "(Switch to block text - easy)";
     } else {
-      this.sentenceEl.style.fontFamily = "inherit";
-      this.switchStyleEl.textContent = "(Switch to cursive text - hard)";
+      this.sentenceElement.style.fontFamily = "inherit";
+      this.switchStyleElement.textContent = "(Switch to cursive text - hard)";
     }
   }
 
@@ -81,16 +80,16 @@ export default class UI {
 
     // Update class list which changes div colour
     if (isCorrect) {
-      answerDiv.classList.add("correct");
-      answerDiv.classList.remove("wrong");
-      this.resultEl.textContent = "Correct!";
+      this.answerDiv.classList.add("correct");
+      this.answerDiv.classList.remove("wrong");
+      this.resultElement.textContent = "Correct!";
     } else {
-      answerDiv.classList.add("wrong");
-      answerDiv.classList.remove("correct");
-      this.resultEl.textContent = "Wrong!";
+      this.answerDiv.classList.add("wrong");
+      this.answerDiv.classList.remove("correct");
+      this.resultElement.textContent = "Wrong!";
     }
 
-    this.translationEl.textContent = "Translation: " + translation;
+    this.translationElement.textContent = "Translation: " + translation;
   }
 
   /**
@@ -98,14 +97,10 @@ export default class UI {
    * @param {string} sentence - The next sentence to be displayed.
    */
   showQuestion(sentence) {
-    // Your logic showing the next question goes here.
 
     // Hide the answerDiv and Show the questionDiv
     this.answerDiv.style.display = "none";
     this.questionDiv.style.display = "block";
-
-    // TODO: manage any other functionality
-
-    this.sentenceEl.textContent = sentence;
+    this.sentenceElement.textContent = sentence;
   }
 }
