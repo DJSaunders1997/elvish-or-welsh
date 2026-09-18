@@ -16,6 +16,8 @@ export default class Game {
    */
   constructor(sentenceManager, ui) {
     this.score = 0; // Keep track of the player's current score
+    this.questionsAsked = 0;
+    this.roundLength = 10;
     this.sentenceManager = sentenceManager;
 
     this.ui = ui;
@@ -45,14 +47,27 @@ export default class Game {
       var correct = false;
     }
 
+    this.questionsAsked++;
     this.ui.showAnswer(correct, this.sentenceManager.getSentence().translation);
 
   }
 
   showNextQuestion() {
+    if (this.questionsAsked >= this.roundLength) {
+      this.ui.showSummary(this.score, this.roundLength);
+      return;
+    }
+
     // Move on to the next sentence
     this.sentenceManager.nextSentence();
-
     this.ui.showQuestion(this.sentenceManager.getSentence().text)
+  }
+
+  playAgain() {
+    this.score = 0;
+    this.questionsAsked = 0;
+    this.ui.updateScore(this.score);
+    this.sentenceManager.reset();
+    this.ui.hideSummary(this.sentenceManager.getSentence().text);
   }
 }

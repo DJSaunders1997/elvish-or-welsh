@@ -18,6 +18,11 @@ export default class UI {
     this.resultEl = document.getElementById("result");
     this.translationEl = document.getElementById("translation");
 
+    // Summary Div contains end-of-round results
+    this.summaryDiv = document.getElementById("summaryDiv");
+    this.summaryTitleEl = document.getElementById("summaryTitle");
+    this.summaryScoreEl = document.getElementById("summaryScore");
+
     // Initialize the Cursive variable
     this.isCursive = true;
     this.setupCursiveEventListeners();
@@ -106,6 +111,33 @@ export default class UI {
 
     // TODO: manage any other functionality
 
+    this.sentenceEl.textContent = sentence;
+  }
+
+  /**
+   * Displays the end-of-round summary screen.
+   * @param {number} score - The player's final score.
+   * @param {number} total - The total number of questions in the round.
+   */
+  showSummary(score, total) {
+    this.answerDiv.style.display = "none";
+    this.questionDiv.style.display = "none";
+    this.summaryDiv.style.display = "block";
+    document.getElementById("sentence").style.display = "none";
+
+    const pct = Math.round((score / total) * 100);
+    this.summaryTitleEl.textContent = "Round Complete!";
+    this.summaryScoreEl.textContent = `You scored ${score} out of ${total} (${pct}%)`;
+  }
+
+  /**
+   * Hides the summary screen and restores the question view.
+   * @param {string} sentence - The first sentence of the new round.
+   */
+  hideSummary(sentence) {
+    this.summaryDiv.style.display = "none";
+    this.questionDiv.style.display = "block";
+    document.getElementById("sentence").style.display = "block";
     this.sentenceEl.textContent = sentence;
   }
 }

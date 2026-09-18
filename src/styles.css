@@ -53,6 +53,18 @@ p {
 #answerDiv {
   display: none;
 }
+#summaryDiv {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+#summaryDiv h2 {
+  font-size: 36px;
+  color: #333;
+}
+#summaryDiv p {
+  font-size: 24px;
+}
 
 /* Background colors based on answer correctness */
 .correct {

@@ -345,15 +345,27 @@ class SentenceManager {
    * Updates the current sentence and index.
    */
   nextSentence() {
-
     this.currentSentenceIndex++;
-    this.currentSentence = this.sentences[this.currentSentenceIndex];
 
     // If we've been through all sentences, then reset index and reshuffle
     if (this.currentSentenceIndex >= this.sentences.length) {
       this.currentSentenceIndex = 0;
       this.shuffleArray();
+      return false;
     }
+
+    this.currentSentence = this.sentences[this.currentSentenceIndex];
+    return true;
+  }
+
+  get totalQuestions() {
+    return this.sentences.length;
+  }
+
+  reset() {
+    this.currentSentenceIndex = 0;
+    this.shuffleArray();
+    this.currentSentence = this.sentences[this.currentSentenceIndex];
   }
 }
 

@@ -19,3 +19,4 @@ let game = new Game(sentenceManager, ui);
 // Used by the Elvish, Welsh and Next Question buttons in index.html
 window.checkAnswer = (answer) => game.checkAnswer(answer);
 window.showNextQuestion = () => game.showNextQuestion();
+window.playAgain = () => game.playAgain();
