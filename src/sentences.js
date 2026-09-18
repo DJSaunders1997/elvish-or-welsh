@@ -11,7 +11,7 @@ const json_string = `
   {
     "text": "Annon edhellen, edro hi ammen!",
     "language": "Elvish",
-    "translation": "I will speak Elvish, go now!"
+    "translation": "Gate of the Elves, open now for us!"
   },
   {
     "text": "Croeso i Gymru, y wlad ryfeddol hon.",
@@ -21,7 +21,7 @@ const json_string = `
   {
     "text": "Galu!",
     "language": "Elvish",
-    "translation": "A cry of defiance or challenge"
+    "translation": "Good fortune!"
   },
   {
     "text": "Mae hi'n bwrw glaw yn y Gogledd heddiw.",
@@ -39,9 +39,9 @@ const json_string = `
     "translation": "Lleucu Llwyd was the girl's name."
   },
   {
-    "text": "Mae dafad ddu ym mydd mynydd.",
+    "text": "Mae defaid du ar y mynydd.",
     "language": "Welsh",
-    "translation": "There are black sheep in the middle of the mountain."
+    "translation": "There are black sheep on the mountain."
   },
   {
     "text": "Im mîl bennin blathaon.",
@@ -71,7 +71,7 @@ const json_string = `
   {
     "text": "I elenath! Mellyn!",
     "language": "Elvish",
-    "translation": "To the elves! Friends!"
+    "translation": "The stars! Friends!"
   },
   {
     "text": "Dw i'n hoffi coffi poeth.",
@@ -142,7 +142,7 @@ const json_string = `
   {
     "text": "Nin o Chithaeglir lasto beth daer: Rimmo nin Bruinen dan in Ulaer!",
     "language": "Elvish",
-    "translation": "From the Great River to the last shore: in Bruinen let the Ringwraiths drown!"
+    "translation": "Waters of the Misty Mountains, listen to the great word: flow, waters of Bruinen, against the Ringwraiths!"
   },
   {
     "text": "Rhyfelwyr mewn gwisg aur a gwyn.",
@@ -175,7 +175,7 @@ const json_string = `
     "translation": "The night is passing! Day shall come again!"
   },
   {
-    "text": "Yma yw'r cysgodion yn cwympo.",
+    "text": "Yma mae'r cysgodion yn cwympo.",
     "language": "Welsh",
     "translation": "Here the shadows are falling."
   },
@@ -228,6 +228,81 @@ const json_string = `
     "text": "Mae'r tywydd yn oer heddiw.",
     "language": "Welsh",
     "translation": "The weather is cold today."
+  },
+  {
+    "text": "Elen síla lúmenn' omentielvo.",
+    "language": "Elvish",
+    "translation": "A star shines on the hour of our meeting."
+  },
+  {
+    "text": "Bore da, sut dych chi heddiw?",
+    "language": "Welsh",
+    "translation": "Good morning, how are you today?"
+  },
+  {
+    "text": "Naur an edraith ammen!",
+    "language": "Elvish",
+    "translation": "Fire be for saving of us!"
+  },
+  {
+    "text": "Mae gen i gi bach du a gwyn.",
+    "language": "Welsh",
+    "translation": "I have a small black and white dog."
+  },
+  {
+    "text": "Lasto beth nîn, tolo dan nan galad.",
+    "language": "Elvish",
+    "translation": "Hear my word, come back to the light."
+  },
+  {
+    "text": "Diolch yn fawr iawn am eich help.",
+    "language": "Welsh",
+    "translation": "Thank you very much for your help."
+  },
+  {
+    "text": "Cuio i Pheriain anann!",
+    "language": "Elvish",
+    "translation": "May the Halflings live long!"
+  },
+  {
+    "text": "Beth yw enw'r pentref nesaf?",
+    "language": "Welsh",
+    "translation": "What is the name of the next village?"
+  },
+  {
+    "text": "Le hannon.",
+    "language": "Elvish",
+    "translation": "Thank you."
+  },
+  {
+    "text": "Rwy'n darllen llyfr yn y llyfrgell.",
+    "language": "Welsh",
+    "translation": "I'm reading a book in the library."
+  },
+  {
+    "text": "Ú-chebin Estel anim.",
+    "language": "Elvish",
+    "translation": "I have kept no hope for myself."
+  },
+  {
+    "text": "Mae'r mynyddoedd yn hardd iawn yn yr hydref.",
+    "language": "Welsh",
+    "translation": "The mountains are very beautiful in the autumn."
+  },
+  {
+    "text": "Man cenich?",
+    "language": "Elvish",
+    "translation": "What do you see?"
+  },
+  {
+    "text": "Nos da, cysga'n dawel heno.",
+    "language": "Welsh",
+    "translation": "Good night, sleep peacefully tonight."
+  },
+  {
+    "text": "Arwen vanimelda, namárië!",
+    "language": "Elvish",
+    "translation": "Arwen, beautiful one, farewell!"
   }
 ]
 `
